@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import React, { useState } from 'react';
+import TextField from '@mui/material/TextField';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,14 +17,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-      <h1>Journal</h1>
-        <textarea
+      <h1 className="text-4xl mb-10">Journal</h1>
+        <TextField
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Write your journal entry here..."
+          multiline
           rows={10}
-          cols={50}
-        ></textarea>
+          fullWidth
+          variant="outlined"
+        />
       </main>
     </>
   )
